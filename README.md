@@ -38,3 +38,8 @@
 ## License
 
 MIT
+
+
+## Note
+
+The mechanism used in the app to schedule repeatitive notifications is deprecated for iOS. According to [Expo documentation](https://docs.expo.io/versions/latest/sdk/notifications/#notificationsschedulelocalnotificationasynclocalnotification-schedulingoptions), however, this is still the way to schedule notifications. 
