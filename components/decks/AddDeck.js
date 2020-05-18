@@ -43,7 +43,7 @@ class AddDeck extends React.Component {
   };
 
   checkIfExists = () => {
-    return this.props.decks[this.state.text];
+    return this.props.decks[this.state.text] !== undefined;
   };
 
   render() {

@@ -55,8 +55,7 @@ class AddCard extends React.Component {
   };
 
   render() {
-
-    const enableButton = this.isInputValid()
+    const isValid = this.isInputValid();
     return (
       <KeyboardDismissingView style={styles.container}>
         <View style={styles.inputGroup}>
@@ -71,7 +70,7 @@ class AddCard extends React.Component {
           />
         </View>
         <View style={styles.inputGroup}>
-          <Text style={styles.label}>Answer</Text>
+          <Text style={[styles.label, ]}>Answer</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter answer"
@@ -86,7 +85,7 @@ class AddCard extends React.Component {
             style={styles.button}
             title="Add"
             onPress={this.handleSubmit}
-            disabled={!enableButton}
+            disabled={!isValid}
           />
         </View>
       </KeyboardDismissingView>
@@ -102,30 +101,38 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   label: {
+    flex: 1,
+    alignSelf: 'center',
     textAlign: "center",
     textAlignVertical: "center",
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "bold",
-    margin: 5,
   },
   input: {
+    flex: 3,
+    marginLeft: 20,
     textAlign: "center",
     alignSelf: "center",
-    fontSize: 20,
+    fontSize: 15,
     margin: 5,
-    height: 100,
+    height: 'auto',
+    minHeight: 80,
     width: "90%",
+    borderColor: "black",
+    borderStyle: "dotted",
+    borderWidth: 1
   },
   inputGroup: {
-    flex: 0.2,
-    padding: 10,
-    margin: 20,
+    flex: 1,
+    padding: 5,
+    marginLeft: 20,
+    marginTop: 10,
     width: "100%",
     justifyContent: "center",
-    alignContent: "center",
+    alignContent: "flex-start",
   },
   button: {
-    flex: 0.6,
+    flex: 1,
     textAlign: "center",
   },
 });

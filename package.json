@@ -27,7 +27,9 @@
     "react-redux": "^7.2.0",
     "react-redux-loading": "^4.6.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "expo-permissions": "~8.1.0",
+    "expo-notifications": "~0.1.1"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",

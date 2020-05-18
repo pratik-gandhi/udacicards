@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
   button: {
     padding: 50,
     marginBottom: 10,
-    backgroundColor: "green",
   },
 });
 

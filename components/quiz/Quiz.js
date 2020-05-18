@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
-import { setQuizTime } from "../../actions/quiz";
 import QuizResult from "./QuizResult";
 import NoQuestions from "./NoQuestions";
 import Question from "../questions/Question";
 import { Icon } from "react-native-elements";
+import { clearLocalNotification, setLocalNotification} from "../../utils/helpers"
 
 class Quiz extends React.Component {
   state = {
@@ -24,8 +24,10 @@ class Quiz extends React.Component {
   }
 
   increment = (correct) => {
+
+    // Quiz is complete
     if (this.state.currentQuestion === this.totalQuestions - 1) {
-      this.props.dispatch(setQuizTime(Date.now()));
+      clearLocalNotification().then(setLocalNotification)
     }
 
     this.setState((currentState) => ({
