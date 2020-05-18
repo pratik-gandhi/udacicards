@@ -1,16 +1,12 @@
 import { SHOW_TOAST } from "../actions/toast";
 import { HIDE_TOAST } from "../actions/toast";
 
-export default function toastSHOW_TOAST(state = {}, action) {
+export default function toast(state = null, action) {
   switch (action.type) {
     case SHOW_TOAST:
-      return {
-        text: action.text,
-      };
+      return action.toast;
     case HIDE_TOAST:
-      return {
-        text: null,
-      };
+      return null;
     default:
       return state;
   }

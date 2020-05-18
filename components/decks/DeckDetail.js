@@ -3,9 +3,12 @@ import { View, Text, Button, StyleSheet, Alert } from "react-native";
 import { connect } from "react-redux";
 import { deleteDeck } from "../../actions/decks";
 
+import { showConfirmationMessage } from "../../utils/helpers"
+
 class DeckDetail extends React.Component {
   delete = (deckId) => {
     this.props.dispatch(deleteDeck(deckId));
+    showConfirmationMessage(this.props.dispatch, "👻 Deck deleted", `Deck '${deckId}' was deleted`, 'warn');
   };
 
   confirmAndDelete = (deckId) => {

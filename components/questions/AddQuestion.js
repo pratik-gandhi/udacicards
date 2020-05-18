@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 
-import { generateUID } from "../../utils/helpers";
+import { generateUID, showConfirmationMessage } from "../../utils/helpers";
 import { addQuestion } from "../../actions/decks";
 import { common } from "../../styles/common";
 
@@ -34,6 +34,7 @@ class AddCard extends React.Component {
       question: "",
       answer: "",
     }));
+    showConfirmationMessage(this.props.dispatch, "🎊 Question added", `Question was added to the deck`, 'success')
   };
 
   handeChange = (field, value) => {

@@ -35,10 +35,10 @@ class AddDeck extends React.Component {
         questions: [],
       })
     );
-    showConfirmationMessage(this.props.dispatch, text);
     this.setState({
       text: "",
     });
+    showConfirmationMessage(this.props.dispatch, "👯 Deck Added", `Deck '${text}' was added`, 'success');
     this.props.navigation.navigate("Home");
   };
 

@@ -69,7 +69,7 @@ export const generateUID = () => {
   );
 };
 
-export const showConfirmationMessage = (dispatch, text) => {
-  dispatch(showToast(text));
-  setTimeout(() => hideToast(), 1000);
+export const showConfirmationMessage = (dispatch, title, body, type) => {
+  dispatch(showToast({ title, body, type }));
+  setTimeout(() => dispatch(hideToast()), 1200);
 };
